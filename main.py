@@ -145,6 +145,17 @@ while True:
 				bird_rect.center = (100,512)
 				bird_movement = 0
 				score = 0
+		if event.type == pygame.MOUSEBUTTONDOWN and game_active:
+			bird_movement = 0
+			bird_movement -= 9
+			flap_sound.play()
+
+		if event.type == pygame.MOUSEBUTTONDOWN and game_active == False:
+			game_active = True
+			pipe_list.clear()
+			bird_rect.center = (100,512)
+			bird_movement = 0
+			score = 0
 
 		if event.type == SPAWNPIPE:
 			pipe_list.extend(create_pipe())
